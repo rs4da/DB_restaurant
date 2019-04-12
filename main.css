@@ -1,0 +1,66 @@
+/*   
+    Sumin Kim (sk5gz)
+    Jeanie Huynh (gyh3nf) 
+    Cherokee Toole (​crt5qz) 
+    Roman Sharykin (​rs4da)
+*/
+
+header{
+  margin-top:1%;
+  margin-left:1%;
+  margin-right:2%;
+  outline:#291059 dotted 2px;
+}
+.navbar-brand{
+  /*font-family: 'Sacramento', cursive;*/
+  font-family: 'Garamond';
+  letter-spacing: 5px;
+  font-size: 50px;
+  margin-top:-17px;
+  margin-bottom:-17px;
+  padding-left:1%;
+}
+
+.row{
+  padding-top:5%;
+  padding-bottom:2%;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.categoryproducts {
+  background-color:#ffffff;
+  padding:10% 7% 6% 8%;
+  height: 90%;
+  margin-bottom:2%;
+  outline: 2px dotted;
+}
+
+.categoryproducts:hover{
+  background-color:#e3d1ff;
+  cursor:pointer;
+}
+
+.form-group{
+  font-family: 'Raleway Dots', cursive;
+  font-weight:bold;
+}
+.error {
+  font-style:italic;
+  color: #fff;
+}
+#link {
+  color:black;
+}
+.btn-outline-search{
+  border-color:#a3a9ff;
+  background-color:#c9cdff;
+  width: 20%;
+  font-family:'Raleway Dots', cursive;
+  font-weight:bold;
+}
+.btn-outline-search:hover{
+  background-color:#a3a9ff;
+  border-color:#a3a9ff;
+  color:#FFF;
+}
+
