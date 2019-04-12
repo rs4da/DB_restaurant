@@ -1,7 +1,7 @@
 <?php
 	$SERVER = 'mysql.cs.virginia.edu';
-	$USERNAME = 'yourComputingID';
-	$PASSWORD = 'yourPassword';
-	$DATABASE = 'yourComputingID';
+	$USERNAME = 'crt5qz';
+	$PASSWORD = 'password';
+	$DATABASE = 'crt5qz_Restaurant';
 ?>
 
