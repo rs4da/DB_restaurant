@@ -18,26 +18,24 @@
 </style>
 
 <div>
+<center>
  <p>Orders</p>
-
+</center>
  <form action="addOrder.php" method="post">
- <p><b>Add a new order: </b></p>
- <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
+ <p><b>Open a new order: </b></p>
+ <p>Enter order id: <input type="text" name="order_id" /></p>
  <p>Enter food name: <input type="text" name="food" /></p>
- <p>Enter table number: <input type="text" name="c_table" /></p>
+ <p>Enter customer phone number: <input type="text" name="phone_num" /></p>
  <p><input type="submit" /></p>
  </form>
 
  <form action="deleteOrder.php" method="post">
- <p><b>Delete an order:</b></p>
- <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
- <p>Enter food name: <input type="text" name="food" /></p>
- <p>Enter table number: <input type="text" name="c_table" /></p>
+ <p><b>Close an order:</b></p>
+ <p>Enter order id: <input type="text" name="order_id" /></p>
  <p><input type="submit" /></p>
  </form>
 
  <p><b>Current orders: </b></p>
-</div>
 
 <?php
     require_once('./library.php');
@@ -55,16 +53,16 @@
     echo '
         <table>
             <tr>
-                <th>Restaurant ID</th>
+                <th>Order ID</th>
                 <th>Food Name</th>
-		<th>Table Number</th>
+		<th>Customer Phone Number</th>
             </tr>';
     while($row = mysqli_fetch_array($result)) {
         echo '
             <tr>
-                <td>'.$row['rest_id'].'</td>
+                <td>'.$row['order_id'].'</td>
                 <td>'.$row['food'].'</td>
-                <td>'.$row['c_table'].'</td>
+                <td>'.$row['phone_num'].'</td>
             </tr>';
         echo "<br>";
     }
@@ -74,3 +72,4 @@
     
     mysqli_close($con);
 ?>
+</div>
