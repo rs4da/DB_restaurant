@@ -49,7 +49,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Orders ORDER BY rest_id";
+    $sql="CALL SelectTable('Orders');";
     $result = mysqli_query($con,$sql);
 
     echo '

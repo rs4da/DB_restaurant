@@ -52,7 +52,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Reservation ORDER BY rest_id";
+    $sql="CALL SelectTable('Reservation');";
     $result = mysqli_query($con,$sql);
 
     echo '

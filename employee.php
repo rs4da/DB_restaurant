@@ -47,7 +47,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Employee ORDER BY emp_id";
+    $sql="CALL SelectTable('Employee');";
     $result = mysqli_query($con,$sql);
 
     echo '
@@ -102,7 +102,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Hire ORDER BY rest_id";
+    $sql="CALL SelectTable('Hire');";
     $result = mysqli_query($con,$sql);
 
     echo '

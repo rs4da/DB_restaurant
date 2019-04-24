@@ -47,7 +47,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Restaurant ORDER BY rest_id";
+    $sql="CALL SelectTable('Restaurant');";
     $result = mysqli_query($con,$sql);
 
     echo '

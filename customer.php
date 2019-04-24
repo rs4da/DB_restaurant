@@ -48,7 +48,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Customer ORDER BY phone_num";
+    $sql="CALL SelectTable('Customer');";
     $result = mysqli_query($con,$sql);
 
     echo '
@@ -105,7 +105,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Eat_at ORDER BY rest_id";
+    $sql="CALL SelectTable('Eat_at');";
     $result = mysqli_query($con,$sql);
 
     echo '
@@ -159,7 +159,7 @@
         return null;
     }
 
-    $sql="SELECT * FROM Serve ORDER BY serve_id";
+    $sql="CALL SelectTable('Serve');";
     $result = mysqli_query($con,$sql);
 
     echo '
