@@ -8,9 +8,9 @@
 mysqli_connect_error();
  }
  // Form the SQL query (an INSERT query)
- $sql="INSERT INTO Employee (rest_id, emp_id, ename, wage)
+ $sql="INSERT INTO Employee (emp_id, ename, wage)
  VALUES
- ('$_POST[rest_id]','$_POST[emp_id]','$_POST[ename]','$_POST[wage]')";
+ ('$_POST[emp_id]','$_POST[ename]','$_POST[wage]')";
 
  if (!mysqli_query($con,$sql))
  {

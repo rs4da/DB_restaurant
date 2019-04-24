@@ -8,7 +8,7 @@
 mysqli_connect_error();
  }
  // Form the SQL query (a DELETE query)
- $sql="DELETE FROM Employee WHERE emp_id = '$_POST[emp_id]'";
+ $sql="DELETE FROM Hire WHERE emp_id = '$_POST[emp_id]'";
 
  if (!mysqli_query($con,$sql))
  {
