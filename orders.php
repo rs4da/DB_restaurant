@@ -100,7 +100,7 @@
                 <tr>
                     <th>Order ID</th>
                     <th>Food Name</th>
-                    <th>Table Number</th>
+                    <th>Phone Number</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {

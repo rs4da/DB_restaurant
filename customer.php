@@ -220,7 +220,7 @@
                 <tr>
                     <th>Serve ID</th>
                     <th>Employee ID</th>
-                    <th>Customer Phone Number</th>
+                    <th>Phone Number</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
