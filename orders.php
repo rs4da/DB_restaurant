@@ -95,28 +95,30 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Order ID</th>
-                    <th>Food Name</th>
-                    <th>Phone Number</th>
+                    <th style="padding: 25px 0px 25px 0px;">Order ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Food Name</th>
+                    <th style="padding: 25px 0px 25px 0px;">Phone Number</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
         <tbody>
             <tr>
-                <td>'.$row['order_id'].'</td>
-                <td>'.$row['food'].'</td>
-                <td>'.$row['phone_num'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['order_id'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['food'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['phone_num'].'</td>
             </tr>
         </tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
     
     mysqli_close($con);
 ?>

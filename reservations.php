@@ -115,31 +115,33 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
          <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Reservation ID</th>
-                    <th>Customer Name</th>
-                    <th>Party Size</th>
-                    <th>Date</th>
-                    <th>Time</th>
+                    <th style="padding: 25px 0px 25px 0px;">Reservation ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Customer Name</th>
+                    <th style="padding: 25px 0px 25px 0px;">Party Size</th>
+                    <th style="padding: 25px 0px 25px 0px;">Date</th>
+                    <th style="padding: 25px 0px 25px 0px;">Time</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
             <tbody>
                 <tr>
-                    <td>'.$row['reserv_id'].'</td>
-                    <td>'.$row['cname'].'</td>
-                    <td>'.$row['party_size'].'</td>
-                    <td>'.$row['rdate'].'</td>
-                    <td>'.$row['rtime'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['reserv_id'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['cname'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['party_size'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['rdate'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['rtime'].'</td>
                 </tr>
             </tbody>';
         echo "<br>";
     }
 
-    echo '</table>';
+    echo '</table>
+        </div>';
     
     mysqli_close($con);
 ?>
@@ -160,26 +162,28 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Reservation ID</th>
-                    <th>Table Number</th>
+                    <th style="padding: 25px 0px 25px 0px;">Reservation ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Table Number</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
             <tbody>
                 <tr>
-                    <td>'.$row['reserv_id'].'</td>
-                    <td>'.$row['c_table'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['reserv_id'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['c_table'].'</td>
                 </tr>
             </tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
     
     mysqli_close($con);
 ?>

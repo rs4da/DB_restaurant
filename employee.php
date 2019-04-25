@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gilda+Display|Raleway+Dots|Love+Ya+Like+A+Sister|Reenie+Beanie|Fredericka+the+Great|Shadows+Into+Light+Two|Major+Mono+Display|Bilbo|Architects+Daughter|Sacramento|Marck+Script|Thasadith|Open+Sans+Condensed:300" rel="stylesheet">
     <title>Database Project</title>
     <script type="text/javascript">
+
     </script>
   </head>
 
@@ -100,30 +101,31 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Employee ID</th>
-                    <th>Employee Name</th>
-                    <th>Employee Wage</th>
+                    <th style="padding: 25px 0px 25px 0px;">Employee ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Employee Name</th>
+                    <th style="padding: 25px 0px 25px 0px;">Employee Wage</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
         <tbody>
             <tr>
-                <td>'.$row['emp_id'].'</td>
-                <td>'.$row['ename'].'</td>
-                <td>'.$row['wage'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['emp_id'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['ename'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['wage'].'</td>
             </tr>
         </tbody>';
         echo "<br>";
     }
 
-    echo '</table>';
+    echo '</table>
+        </div>';
     
     mysqli_close($con);
-
 ?>
 
  <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Where current Tavola employees work: </b></p>
@@ -142,26 +144,28 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Restaurant ID</th>
-                    <th>Employee ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Restaurant ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Employee ID</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
             <tbody>
                 <tr>
-                    <td>'.$row['rest_id'].'</td>
-                    <td>'.$row['emp_id'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['rest_id'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['emp_id'].'</td>
                 </tr>
             </tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
     
     mysqli_close($con);
 ?>

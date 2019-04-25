@@ -105,13 +105,14 @@
 
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
+
 </div>
 </div>
 
 
 <div class="d-flex flex-column p-1 justify-content-center text-center">
 
-<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current customers:</p></b>
+<b style="font-size: 35px; margin-top: 25px; margin-bottom:0; font-family: 'Garamond';"><p>Current customers:</p></b>
 
 <?php
     require_once('./library.php');
@@ -127,13 +128,14 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
-            <thead>
+            <thead">
                 <tr>
-                    <th>Phone Number</th>
-                    <th>Table Number</th>
-                    <th>Customer Name</th>
-                    <th>Bill ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Phone Number</th>
+                    <th style="padding: 25px 0px 25px 0px;">Table Number</th>
+                    <th style="padding: 25px 0px 25px 0px;">Customer Name</th>
+                    <th style="padding: 25px 0px 25px 0px;">Bill ID</th>
                 </tr>
             </thead>';
 
@@ -141,20 +143,20 @@
         echo '
         <tbody>
             <tr>
-                <td>'.$row['phone_num'].'</td>
-                <td>'.$row['c_table'].'</td>
-                <td>'.$row['cname'].'</td>
-                <td>'.$row['bill_id'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['phone_num'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['c_table'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['cname'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['bill_id'].'</td>
             </tr>
         </tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
     
     mysqli_close($con);
-
 ?>
 
 <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Where current Tavola customers are eating: </b></p>
@@ -173,32 +175,33 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Phone Number</th>
-                    <th>Restaurant ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Phone Number</th>
+                    <th style="padding: 25px 0px 25px 0px;">Restaurant ID</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
         <tbody>
             <tr>
-                <td>'.$row['phone_num'].'</td>
-                <td>'.$row['rest_id'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['phone_num'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['rest_id'].'</td>
             </tr>
         </tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
     
     mysqli_close($con);
 ?>
 
 <div>
-
  <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Who current Tavola customers are being served by: </b></p>
 </div>
 
@@ -216,28 +219,30 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Serve ID</th>
-                    <th>Employee ID</th>
-                    <th>Phone Number</th>
+                    <th style="padding: 25px 0px 25px 0px;">Serve ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Employee ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Phone Number</th>
                 </tr>
             </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
             <tbody>
                 <tr>
-                    <td>'.$row['serve_id'].'</td>
-                    <td>'.$row['emp_id'].'</td>
-                    <td>'.$row['phone_num'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['serve_id'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['emp_id'].'</td>
+                    <td style="padding: 25px 0px 25px 0px;">'.$row['phone_num'].'</td>
                 </tr>
             </tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
     
     mysqli_close($con);
 ?>
