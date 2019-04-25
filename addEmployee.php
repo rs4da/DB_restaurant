@@ -11,12 +11,21 @@ mysqli_connect_error();
  $sql="INSERT INTO Employee (emp_id, ename, wage)
  VALUES
  ('$_POST[emp_id]','$_POST[ename]','$_POST[wage]')";
+ $sql2="INSERT INTO Hire (rest_id, emp_id)
+ VALUES
+ ('$_POST[rest_id]','$_POST[emp_id]')";
 
  if (!mysqli_query($con,$sql))
  {
  echo $USERNAME;
  die('Error: ' . mysqli_error($con));
  }
- echo "1 record added"; // Output to user
+
+ if (!mysqli_query($con,$sql2))
+ {
+ echo $USERNAME;
+ die('Error: ' . mysqli_error($con));
+ }
+ echo "Employee added successfully!"; // Output to user
  mysqli_close($con);
 ?>

@@ -35,6 +35,13 @@
     <form action="addReservation.php">
     <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new employee:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-text-input" class="col-5 col-form-label">Enter restaurant id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="rest_id">
+            </div>
+        </div>
+
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter employee id:</label>
             <div class="col-7">
                 <input class="form-control" type="text" id="emp_id">
@@ -119,4 +126,43 @@
     mysqli_close($con);
 ?>
 
+ <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Where current Tavola employees work: </b></p>
+
+<?php
+    require_once('./library.php');
+    $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
+
+    if (mysqli_connect_errno()) {
+        echo("Can't connect to MySQL Server. Error code: " .
+        mysqli_connect_error());
+        return null;
+    }
+
+    $sql="CALL SelectTable('Hire');";
+    $result = mysqli_query($con,$sql);
+
+    echo '
+        <table class="table table-hover" style="margin: auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th>Restaurant ID</th>
+                    <th>Employee ID</th>
+                </tr>
+            </thead>';
+    while($row = mysqli_fetch_array($result)) {
+        echo '
+            <tbody>
+                <tr>
+                    <td>'.$row['rest_id'].'</td>
+                    <td>'.$row['emp_id'].'</td>
+                </tr>
+            </tbody>';
+        echo "<br>";
+    }
+
+    echo '
+        </table>';
+    
+    mysqli_close($con);
+?>
 

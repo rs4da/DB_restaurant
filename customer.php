@@ -30,10 +30,17 @@
     </nav>
     </header>
 
-    <div class="col-sm-6 offset-sm-3 text-center">
+    <div class="col-sm-8 offset-sm-2 text-center">
 <div class="form-group">
     <form action="addReservation.php">
     <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new customer:</b></p>
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-text-input" class="col-5 col-form-label">Enter restaurant id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="rest_id">
+            </div>
+        </div>
+
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter customer's phone number:</label>
             <div class="col-7">
@@ -58,7 +65,21 @@
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-url-input" class="col-5 col-form-label">Enter bill id:</label>
             <div class="col-7">
-                <input class="form-control" type="date" id="bill_id">
+                <input class="form-control" type="text" id="bill_id">
+            </div>
+        </div>
+
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-url-input" class="col-5 col-form-label">Enter serve id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="serve_id">
+            </div>
+        </div>
+
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-url-input" class="col-5 col-form-label">Enter employee id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="emp_id">
             </div>
         </div>
 
@@ -75,6 +96,13 @@
             </div>
         </div>
 
+        <div class="form-group row" style="margin: 1px; padding: 3px">
+            <label for="example-tel-input" class="col-5 col-form-label">Enter serve id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="serve_id">
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
 
@@ -85,7 +113,6 @@
 <div class="d-flex flex-column p-1 justify-content-center text-center">
 
 <b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current customers:</p></b>
-
 
 <?php
     require_once('./library.php');
@@ -107,7 +134,8 @@
                     <th>Phone Number</th>
                     <th>Table Number</th>
                     <th>Customer Name</th>
-                    </tr>
+                    <th>Bill ID</th>
+                </tr>
             </thead>';
 
     while($row = mysqli_fetch_array($result)) {
@@ -129,5 +157,87 @@
     mysqli_close($con);
 ?>
 
+<p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Where current Tavola customers are eating: </b></p>
 
+<?php
+    require_once('./library.php');
+    $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
+
+    if (mysqli_connect_errno()) {
+        echo("Can't connect to MySQL Server. Error code: " .
+        mysqli_connect_error());
+        return null;
+    }
+
+    $sql="CALL SelectTable('Eat_at');";
+    $result = mysqli_query($con,$sql);
+
+    echo '
+        <table class="table table-hover" style="margin: auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th>Phone Number</th>
+                    <th>Restaurant ID</th>
+                </tr>
+            </thead>';
+    while($row = mysqli_fetch_array($result)) {
+        echo '
+        <tbody>
+            <tr>
+                <td>'.$row['phone_num'].'</td>
+                <td>'.$row['rest_id'].'</td>
+            </tr>
+        </tbody>';
+        echo "<br>";
+    }
+
+    echo '
+        </table>';
+    
+    mysqli_close($con);
+?>
+
+<div>
+ <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Who current Tavola customers are being served by: </b></p>
+</div>
+
+<?php
+    require_once('./library.php');
+    $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
+
+    if (mysqli_connect_errno()) {
+        echo("Can't connect to MySQL Server. Error code: " .
+        mysqli_connect_error());
+        return null;
+    }
+
+    $sql="CALL SelectTable('Serve');";
+    $result = mysqli_query($con,$sql);
+
+    echo '
+        <table class="table table-hover" style="margin: auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th>Serve ID</th>
+                    <th>Employee ID</th>
+                    <th>Customer Phone Number</th>
+                </tr>
+            </thead>';
+    while($row = mysqli_fetch_array($result)) {
+        echo '
+            <tbody>
+                <tr>
+                    <td>'.$row['serve_id'].'</td>
+                    <td>'.$row['emp_id'].'</td>
+                    <td>'.$row['phone_num'].'</td>
+                </tr>
+            </tbody>';
+        echo "<br>";
+    }
+
+    echo '
+        </table>';
+    
+    mysqli_close($con);
+?>
 
