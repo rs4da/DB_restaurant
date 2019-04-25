@@ -18,8 +18,9 @@
 </style>
 
 <div>
- <p>About Tavola</p>
-
+<center>
+ <h1>About Tavola</h1>
+</center>
  <form action="addLocation.php" method="post">
  <p><b>Add a new restaurant location: </b></p>
  <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
@@ -30,7 +31,6 @@
  <form action="deleteLocation.php" method="post">
  <p><b>Delete a restaurant location:</b></p>
  <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
- <p>Enter restaurant address: <input type="text" name="address" /></p>
  <p><input type="submit" /></p>
  </form>
 

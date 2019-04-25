@@ -10,7 +10,7 @@
     }
     
     // Form the SQL query (a DELETE query)
-    $sql="DELETE FROM Restaurant WHERE rest_id = '$_POST[rest_id]' AND address = '$_POST[address]'";
+    $sql="DELETE FROM Restaurant WHERE rest_id = '$_POST[rest_id]'";
 
     if (!mysqli_query($con,$sql))
     {

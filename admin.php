@@ -14,7 +14,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel ="stylesheet" href ="main.css">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gilda+Display|Raleway+Dots|Love+Ya+Like+A+Sister|Reenie+Beanie|Fredericka+the+Great|Shadows+Into+Light+Two|Major+Mono+Display|Bilbo|Architects+Daughter|Sacramento|Marck+Script|Thasadith|Open+Sans+Condensed:300" rel="stylesheet">
-    <title>Tavola Italian Kitchen</title>
+    <title>Database Project</title>
+    <script type="text/javascript">
+        function setFocus() // sets focus on the search box
+        {
+          document.forms[0].elements[0].focus();
+        }
+
+        function validateInfo() { // displays a message when search button is clicked without any input
+          var search = document.getElementById("search").value;
+          if (search.length == 0) {
+            document.getElementById("searcherror").innerHTML = "Please enter the name of an item";
+            document.getElementById("search").focus();
+            return false;
+          }
+          else {
+            return true;
+          }
+        }
+    </script>
   </head>
 
     <!-- Title -->
@@ -26,8 +44,8 @@
     </header>
 
     <!-- Boxes displaying item categories -->
-<center>
-    <div class="container">
+<center> 
+   <div class="container">
         <div class="row">
             <div class="col-md-4">
 	    <form action="restaurantTable.php" method="post">
@@ -40,7 +58,24 @@
             </a>
             </div>
             <div class="col-md-4">
-	    <form action="restaurantTable.php" method="post">
+            <a id="link" href="reservations.php">
+                <div class="categoryproducts">
+                    <h3>Reservations</h3>
+                    <p>Data about reservations made
+                    </p>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-4">
+            <a id="link" href="orders.php">
+                <div class="categoryproducts">
+                    <h3>Menu Orders</h3>
+                    <p>Data about current orders
+                    </p>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-4">
             <a id="link" href="food.php">
                 <div class="categoryproducts">
                     <h3>Dishes</h3>
@@ -49,9 +84,26 @@
                 </div>
             </a>
             </div>
+            <div class="col-md-4">
+            <a id="link" href="customer.php">
+                <div class="categoryproducts">
+                    <h3>Customers</h3>
+                    <p>Data about customers
+                    </p>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-4">
+            <a id="link" href="employee.php">
+                <div class="categoryproducts">
+                    <h3>Employees</h3>
+                    <p>Data about employees
+                    </p>
+                </div>
+            </a>
+            </div>
       </div>
-
-<p>Manager or employee? Log in <a href="login.html">here</a>.</p>
+<p><a href="index.html">Log out</a></p>
 </center>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

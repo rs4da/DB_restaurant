@@ -18,7 +18,7 @@
 </style>
 
 <div>
- <h1>Dishes</h1>
+<center><h1>Dishes</h1></center>
 
  <form action="FoodInsert.php" method="post">
  <p><b>Add a new dish: </b></p>
@@ -28,15 +28,13 @@
  <p><input type="submit" /></p>
  </form>
 
- <form action="FeedDelete.php" method="post">
+ <form action="FoodDelete.php" method="post">
  <p><b>Delete a dish:</b></p>
  <p>Dish name: <input type="text" name="fname" /></p>
- <p>Dietary restriction: <input type="text" name="diet_res" /></p>
- <p>Price: <input type="text" name="price" /></p>
  <p><input type="submit" /></p>
  </form>
 
- <p><b>Current orders: </b></p>
+ <p><b>Current menu: </b></p>
 </div>
 
 <?php

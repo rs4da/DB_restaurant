@@ -11,12 +11,7 @@
     
     // Form the SQL query (a DELETE query)
     $sql="DELETE FROM Reservation WHERE 
-        rest_id = '$_POST[rest_id]' AND 
-        reserv_id = '$_POST[reserv_id]' AND 
-        cname = '$_POST[cname]' AND
-        party_size = '$_POST[party_size]' AND
-        rdate = '$_POST[rdate]' AND
-        rtime = '$_POST[rtime]'";
+        reserv_id = '$_POST[reserv_id]'";
 
     if (!mysqli_query($con,$sql))
     {
