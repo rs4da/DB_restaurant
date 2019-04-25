@@ -77,7 +77,7 @@
 
 <div class="d-flex flex-column p-1 justify-content-center text-center">
 
-<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current dishes:</p></b>
+<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Menu</p></b>
 
 
 
