@@ -19,14 +19,14 @@
     <header>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:transparent !important">
         <a class="navbar-brand" href="index.html" style="text-shadow: 0 0 10px #9d81d1 , 0 0 10px #1d0f51 , 0 0 10px #1d0f51 , 0 0 10px #9d81d1;">Tavola Italian Kitchen</a>
-        
+
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="navbar-brand" style="font-color:#ffffff; font-size: 30px;">Employee</a>
                 </li>
             </ul>
-        </div>  
+        </div>
     </nav>
     </header>
 
@@ -86,7 +86,9 @@
 
 <b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current employees:</p></b>
 
-
+<form action="EmployeeSelect.php" method="get">
+  <input type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;" value="Download table">
+</form>
 <?php
     require_once('./library.php');
     $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
@@ -124,12 +126,14 @@
 
     echo '</table>
         </div>';
-    
+
     mysqli_close($con);
 ?>
 
  <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Where current Tavola employees work: </b></p>
-
+ <form action="HireSelect.php" method="get">
+   <input type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;" value="Download table">
+ </form>
 <?php
     require_once('./library.php');
     $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
@@ -166,7 +170,6 @@
     echo '
         </table>
         </div>';
-    
+
     mysqli_close($con);
 ?>
-
