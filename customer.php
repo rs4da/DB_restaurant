@@ -18,7 +18,7 @@
 </style>
 
 <div>
- <p>Welcome to the customer info page</p>
+ <center><h1>Customer Info</center></h1>
 
  <form action="addCustomer.php" method="post">
  <p><b>Add a new customer: </b></p>

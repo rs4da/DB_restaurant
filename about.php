@@ -19,7 +19,7 @@
 
 <div>
 <center>
- <h2>About Tavola</h2>
+ <h1>About Tavola</h1>
 </center>
  <form action="addLocation.php" method="post">
  <p><b>Add a new restaurant location: </b></p>

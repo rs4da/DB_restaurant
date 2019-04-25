@@ -18,7 +18,7 @@
 </style>
 
 <div>
- <p>Welcome to the employee info page</p>
+ <center><h1>Employee Info</center></h1>
 
  <form action="addEmployee.php" method="post">
  <p><b>Add a new employee: </b></p>

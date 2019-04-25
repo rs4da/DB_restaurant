@@ -18,9 +18,9 @@
 </style>
 
 <div>
+<center><h1>Reservations</h1></center>
     <form action="addReservation.php" method="post">
         <p><b>Add a new reservation: </b></p>
-        <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
         <p>Enter reservation id: <input type="text" name="reserv_id" /></p>
         <p>Enter reservation name: <input type="text" name="cname" /></p>
         <p>Enter reservation party size: <input type="text" name="party_size" /></p>
@@ -31,14 +31,10 @@
 
     <form action="deleteReservation.php" method="post">
         <p><b>Delete a reservation:</b></p>
-        <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
-        <p>Enter reservation id: <input type="text" name="reserv_id" /></p>
-        <p>Enter reservation name: <input type="text" name="cname" /></p>
-        <p>Enter reservation party size: <input type="text" name="party_size" /></p>
-        <p>Enter reservation date: <input type="date" name="rdate" /></p>
-        <p>Enter reservation time: <input type="time" name="rtime" /></p>
+        <p>Enter reservation id: <input type="text" name="rest_id" /></p>
         <p><input type="submit" /></p>
     </form>
+	<b><p>Current reservations:</p></b>
 </div>
 
 
@@ -58,7 +54,6 @@
     echo '
         <table>
             <tr>
-                <th>Restaurant ID</th>
                 <th>Reservation ID</th>
                 <th>Customer Name</th>
                 <th>Party Size</th>
@@ -68,7 +63,6 @@
     while($row = mysqli_fetch_array($result)) {
         echo '
             <tr>
-                <td>'.$row['rest_id'].'</td>
                 <td>'.$row['reserv_id'].'</td>
                 <td>'.$row['cname'].'</td>
                 <td>'.$row['party_size'].'</td>

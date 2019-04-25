@@ -19,7 +19,7 @@
 
 <div>
 <center>
- <p>Orders</p>
+ <h1>Orders</h1>
 </center>
  <form action="addOrder.php" method="post">
  <p><b>Open a new order: </b></p>

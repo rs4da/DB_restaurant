@@ -76,7 +76,7 @@
             </a>
             </div>
             <div class="col-md-4">
-            <a id="link" href="food.html">
+            <a id="link" href="food.php">
                 <div class="categoryproducts">
                     <h3>Dishes</h3>
                     <p>Data about the dishes we serve
