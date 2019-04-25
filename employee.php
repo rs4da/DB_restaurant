@@ -22,6 +22,7 @@
 
  <form action="addEmployee.php" method="post">
  <p><b>Add a new employee: </b></p>
+ <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
  <p>Enter employee id: <input type="text" name="emp_id" /></p>
  <p>Enter employee name: <input type="text" name="ename" /></p>
  <p>Enter employee wage: <input type="text" name="wage" /></p>
@@ -30,6 +31,7 @@
 
  <form action="deleteEmployee.php" method="post">
  <p><b>Delete employee info:</b></p>
+
  <p>Enter employee id: <input type="text" name="emp_id" /></p>
  <p><input type="submit" /></p>
  </form>
@@ -74,21 +76,6 @@
 ?>
 
 <div>
- <p>Which Tavola location each employee works</p>
-
- <form action="addEmployeeAtLocation.php" method="post">
- <p><b>Add a new employee: </b></p>
- <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
- <p>Enter employee id: <input type="text" name="emp_id" /></p>
- <p><input type="submit" /></p>
- </form>
-
- <form action="deleteEmployeeAtLocation.php" method="post">
- <p><b>Delete an employee:</b></p>
- <p>Enter employee id: <input type="text" name="emp_id" /></p>
- <p><input type="submit" /></p>
- </form>
-
  <p><b>Where current Tavola employees work: </b></p>
 </div>
 

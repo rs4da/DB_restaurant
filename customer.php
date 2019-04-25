@@ -22,16 +22,20 @@
 
  <form action="addCustomer.php" method="post">
  <p><b>Add a new customer: </b></p>
+ <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
  <p>Enter customer's phone number: <input type="text" name="phone_num" /></p>
  <p>Enter table number: <input type="text" name="c_table" /></p>
  <p>Enter customer name: <input type="text" name="cname" /></p>
  <p>Enter bill id: <input type="text" name="bill_id" /></p>
+ <p>Enter serve id: <input type="text" name="serve_id" /></p>
+ <p>Enter employee id: <input type="text" name="emp_id" /></p>
  <p><input type="submit" /></p>
  </form>
 
  <form action="deleteCustomer.php" method="post">
  <p><b>Delete customer info:</b></p>
  <p>Enter customer's phone number: <input type="text" name="phone_num" /></p>
+ <p>Enter serve id: <input type="text" name="serve_id" /></p>
  <p><input type="submit" /></p>
  </form>
 
@@ -77,21 +81,6 @@
 ?>
 
 <div>
- <p>Which Tavola location each customer is eating at</p>
-
- <form action="addCustomerAtLocation.php" method="post">
- <p><b>Add a new customer: </b></p>
- <p>Enter customer's phone number: <input type="text" name="phone_num" /></p>
- <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
- <p><input type="submit" /></p>
- </form>
-
- <form action="deleteCustomerAtLocation.php" method="post">
- <p><b>Delete an employee:</b></p>
- <p>Enter customer's phone number: <input type="text" name="phone_num" /></p>
- <p><input type="submit" /></p>
- </form>
-
  <p><b>Where current Tavola customers are eating: </b></p>
 </div>
 
@@ -130,22 +119,6 @@
 ?>
 
 <div>
- <p>Who is serving each customer</p>
-
- <form action="addServer.php" method="post">
- <p><b>Add a new server: </b></p>
- <p>Enter serve id: <input type="text" name="serve_id" /></p>
- <p>Enter employee id: <input type="text" name="emp_id" /></p>
- <p>Enter customer's phone number: <input type="text" name="phone_num" /></p>
- <p><input type="submit" /></p>
- </form>
-
- <form action="deleteServer.php" method="post">
- <p><b>Delete a server:</b></p>
- <p>Enter serve id: <input type="text" name="serve_id" /></p>
- <p><input type="submit" /></p>
- </form>
-
  <p><b>Who current Tavola customers are being served by: </b></p>
 </div>
 
