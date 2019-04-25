@@ -1,41 +1,84 @@
-<style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
 
-    td,
-    th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel ="stylesheet" href ="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gilda+Display|Raleway+Dots|Love+Ya+Like+A+Sister|Reenie+Beanie|Fredericka+the+Great|Shadows+Into+Light+Two|Major+Mono+Display|Bilbo|Architects+Daughter|Sacramento|Marck+Script|Thasadith|Open+Sans+Condensed:300" rel="stylesheet">
+    <title>Database Project</title>
+    <script type="text/javascript">
 
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-</style>
+    </script>
+  </head>
 
-<div>
- <center><h1>Employee Info</center></h1>
+    <!-- Title -->
+  <body style="background-color: #faf4ff;">
+    <header>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:transparent !important">
+        <a class="navbar-brand" href="index.html" style="text-shadow: 0 0 10px #9d81d1 , 0 0 10px #1d0f51 , 0 0 10px #1d0f51 , 0 0 10px #9d81d1;">Tavola Italian Kitchen</a>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-brand" style="font-color:#ffffff; font-size: 30px;">Employee</a>
+                </li>
+            </ul>
+        </div>  
+    </nav>
+    </header>
 
- <form action="addEmployee.php" method="post">
- <p><b>Add a new employee: </b></p>
- <p>Enter employee id: <input type="text" name="emp_id" /></p>
- <p>Enter employee name: <input type="text" name="ename" /></p>
- <p>Enter employee wage: <input type="text" name="wage" /></p>
- <p><input type="submit" /></p>
- </form>
+<div class="col-sm-6 offset-sm-3 text-center">
+<div class="form-group">
+    <form action="addReservation.php">
+    <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new employee:</b></p>
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-text-input" class="col-5 col-form-label">Enter employee id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="emp_id">
+            </div>
+        </div>
 
- <form action="deleteEmployee.php" method="post">
- <p><b>Delete employee info:</b></p>
- <p>Enter employee id: <input type="text" name="emp_id" /></p>
- <p><input type="submit" /></p>
- </form>
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-search-input" class="col-5 col-form-label">Enter employee name:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="ename">
+            </div>
+        </div>
 
- <p><b>All current Tavola employees: </b></p>
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-email-input" class="col-5 col-form-label">Enter employee wage:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="wage">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
+    </form>
+
+    <form action="deleteReservation.php" method="post">
+        <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete an employee info:</b></p>
+
+        <div class="form-group row" style="margin: 1px; padding: 3px">
+            <label for="example-tel-input" class="col-5 col-form-label">Enter employee id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" id="emp_id">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
+    </form>
+
 </div>
+</div>
+
+
+<div class="d-flex flex-column p-1 justify-content-center text-center">
+
+<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current employees:</p></b>
+
 
 <?php
     require_once('./library.php');
@@ -51,77 +94,29 @@
     $result = mysqli_query($con,$sql);
 
     echo '
-        <table>
-            <tr>
-                <th>Employee ID</th>
-                <th>Employee Name</th>
-		<th>Wage</th>
-            </tr>';
+        <table class="table table-hover" style="margin: auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Wage</th>
+                </tr>
+            </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
+        <tbody>
             <tr>
                 <td>'.$row['emp_id'].'</td>
                 <td>'.$row['ename'].'</td>
                 <td>'.$row['wage'].'</td>
-            </tr>';
+            </tr>
+        </tbody>';
         echo "<br>";
     }
 
-    echo '
-        </table>';
+    echo '</table>';
     
     mysqli_close($con);
 ?>
 
-<div>
- <p>Which Tavola location each employee works</p>
 
- <form action="addEmployeeAtLocation.php" method="post">
- <p><b>Add a new employee: </b></p>
- <p>Enter restaurant id: <input type="text" name="rest_id" /></p>
- <p>Enter employee id: <input type="text" name="emp_id" /></p>
- <p><input type="submit" /></p>
- </form>
-
- <form action="deleteEmployeeAtLocation.php" method="post">
- <p><b>Delete an employee:</b></p>
- <p>Enter employee id: <input type="text" name="emp_id" /></p>
- <p><input type="submit" /></p>
- </form>
-
- <p><b>Where current Tavola employees work: </b></p>
-</div>
-
-<?php
-    require_once('./library.php');
-    $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
-
-    if (mysqli_connect_errno()) {
-        echo("Can't connect to MySQL Server. Error code: " .
-        mysqli_connect_error());
-        return null;
-    }
-
-    $sql="CALL SelectTable('Hire');";
-    $result = mysqli_query($con,$sql);
-
-    echo '
-        <table>
-            <tr>
-                <th>Restaurant ID</th>
-                <th>Employee ID</th>
-            </tr>';
-    while($row = mysqli_fetch_array($result)) {
-        echo '
-            <tr>
-                <td>'.$row['rest_id'].'</td>
-                <td>'.$row['emp_id'].'</td>
-            </tr>';
-        echo "<br>";
-    }
-
-    echo '
-        </table>';
-    
-    mysqli_close($con);
-?>

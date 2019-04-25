@@ -10,9 +10,9 @@
     }
     
     // Form the SQL query (an INSERT query)
-    $sql="INSERT INTO Reservation (reserv_id, cname, party_size, rdate, rtime)
+    $sql="INSERT INTO Reservation (rest_id, reserv_id, cname, party_size, rdate, rtime)
     VALUES
-    ('$_POST[reserv_id]','$_POST[cname]',
+    ('$_POST[rest_id]','$_POST[reserv_id]','$_POST[cname]',
         '$_POST[party_size]','$_POST[rdate]','$_POST[rtime]')";
 
     if (!mysqli_query($con,$sql))

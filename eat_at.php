@@ -23,35 +23,28 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="navbar-brand" style="font-color:#ffffff; font-size: 30px;">Dishes</a>
+                    <a class="navbar-brand" style="font-color:#ffffff; font-size: 30px;">Eat At</a>
                 </li>
             </ul>
         </div>  
     </nav>
     </header>
 
-    <div class="col-sm-6 offset-sm-3 text-center">
+<div class="col-sm-6 offset-sm-3 text-center">
 <div class="form-group">
     <form action="addReservation.php">
-    <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new dish:</b></p>
+    <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new customer:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
-            <label for="example-text-input" class="col-5 col-form-label">Enter dish name:</label>
+            <label for="example-text-input" class="col-5 col-form-label">Enter customer's phone number:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="fname">
+                <input class="form-control" type="text" id="phome_num">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
-            <label for="example-search-input" class="col-5 col-form-label">Enter dietary restriction:</label>
+            <label for="example-search-input" class="col-5 col-form-label">Enter restaurant id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="diet_res">
-            </div>
-        </div>
-
-        <div class="form-group row" style="margin: 1px; padding: 3px;">
-            <label for="example-email-input" class="col-5 col-form-label">Enter reservation party size:</label>
-            <div class="col-7">
-                <input class="form-control" type="text" id="price">
+                <input class="form-control" type="text" id="rest_id">
             </div>
         </div>
 
@@ -59,12 +52,12 @@
     </form>
 
     <form action="deleteReservation.php" method="post">
-        <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete a dish:</b></p>
+        <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete an employee:</b></p>
 
         <div class="form-group row" style="margin: 1px; padding: 3px">
-            <label for="example-tel-input" class="col-5 col-form-label">Enter dish name:</label>
+            <label for="example-tel-input" class="col-5 col-form-label">Enter customer's phone number:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="fname">
+                <input class="form-control" type="text" id="phone_num">
             </div>
         </div>
 
@@ -77,8 +70,7 @@
 
 <div class="d-flex flex-column p-1 justify-content-center text-center">
 
-<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current dishes:</p></b>
-
+<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current customers and places:</p></b>
 
 
 <?php
@@ -91,16 +83,15 @@
         return null;
     }
 
-    $sql="CALL SelectTable('Food')";
+    $sql="CALL SelectTable('Eat_at');";
     $result = mysqli_query($con,$sql);
 
     echo '
-        <table class="table table-hover" style="margin: auto; width: 80%;">
+    <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Dish name</th>
-                    <th>Dietary restriction</th>
-		            <th>Price</th>
+                    <th>Phone Number</th>
+                    <th>Restaurant ID</th>
                 </tr>
             </thead>';
 
@@ -108,16 +99,14 @@
         echo '
         <tbody>
             <tr>
-                <td>'.$row['fname'].'</td>
-                <td>'.$row['diet_res'].'</td>
-                <td>'.$row['price'].'</td>
+                <td>'.$row['phone_num'].'</td>
+                <td>'.$row['rest_id'].'</td>
             </tr>
         </tbody>';
         echo "<br>";
     }
 
-    echo '
-        </table>';
-
+    echo '</table>';
+    
     mysqli_close($con);
 ?>

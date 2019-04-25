@@ -8,9 +8,9 @@
 mysqli_connect_error();
  }
  // Form the SQL query (an INSERT query)
- $sql="INSERT INTO Orders (order_id, food, phone_num)
+ $sql="INSERT INTO Orders (rest_id, food, c_table)
  VALUES
- ('$_POST[order_id]','$_POST[food]','$_POST[c_table]')";
+ ('$_POST[rest_id]','$_POST[food]','$_POST[c_table]')";
 
  if (!mysqli_query($con,$sql))
  {

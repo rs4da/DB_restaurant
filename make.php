@@ -23,48 +23,43 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="navbar-brand" style="font-color:#ffffff; font-size: 30px;">Dishes</a>
+                    <a class="navbar-brand" style="font-color:#ffffff; font-size: 30px;">Make</a>
                 </li>
             </ul>
         </div>  
     </nav>
     </header>
 
-    <div class="col-sm-6 offset-sm-3 text-center">
+
+<div class="col-sm-6 offset-sm-3 text-center">
 <div class="form-group">
-    <form action="addReservation.php">
-    <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new dish:</b></p>
+    <form action="addMake.php">
+    <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new reserved table:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
-            <label for="example-text-input" class="col-5 col-form-label">Enter dish name:</label>
+            <label for="example-text-input" class="col-5 col-form-label">Enter reservation id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="fname">
+                <input class="form-control" type="text" id="reserv_id">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
-            <label for="example-search-input" class="col-5 col-form-label">Enter dietary restriction:</label>
+            <label for="example-search-input" class="col-5 col-form-label">Enter table number:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="diet_res">
+                <input class="form-control" type="text" id="c_table">
             </div>
         </div>
 
-        <div class="form-group row" style="margin: 1px; padding: 3px;">
-            <label for="example-email-input" class="col-5 col-form-label">Enter reservation party size:</label>
-            <div class="col-7">
-                <input class="form-control" type="text" id="price">
-            </div>
-        </div>
 
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
 
-    <form action="deleteReservation.php" method="post">
-        <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete a dish:</b></p>
+    <form action="deleteMake.php" method="post">
+        <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete a reserved table:</b></p>
 
         <div class="form-group row" style="margin: 1px; padding: 3px">
-            <label for="example-tel-input" class="col-5 col-form-label">Enter dish name:</label>
+            <label for="example-tel-input" class="col-5 col-form-label">Enter reservation id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="fname">
+                <input class="form-control" type="text" id="reserv_id">
             </div>
         </div>
 
@@ -77,9 +72,7 @@
 
 <div class="d-flex flex-column p-1 justify-content-center text-center">
 
-<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current dishes:</p></b>
-
-
+<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current reservations:</p></b>
 
 <?php
     require_once('./library.php');
@@ -91,33 +84,32 @@
         return null;
     }
 
-    $sql="CALL SelectTable('Food')";
+    $sql="CALL SelectTable('Make');";
     $result = mysqli_query($con,$sql);
 
     echo '
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Dish name</th>
-                    <th>Dietary restriction</th>
-		            <th>Price</th>
+                    <th>Reservation ID</th>
+                    <th>Table Number</th>
                 </tr>
             </thead>';
-
     while($row = mysqli_fetch_array($result)) {
         echo '
-        <tbody>
-            <tr>
-                <td>'.$row['fname'].'</td>
-                <td>'.$row['diet_res'].'</td>
-                <td>'.$row['price'].'</td>
-            </tr>
-        </tbody>';
+            <tbody>
+                <tr>
+                    <td>'.$row['reserv_id'].'</td>
+                    <td>'.$row['c_table'].'</td>
+                </tr>
+            </tbody>';
         echo "<br>";
     }
 
     echo '
         </table>';
-
+    
     mysqli_close($con);
 ?>
+
+</div>

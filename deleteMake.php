@@ -9,7 +9,8 @@ mysqli_connect_error();
  }
  // Form the SQL query (a DELETE query)
  $sql="DELETE FROM Make WHERE 
-    reserv_id = '$_POST[reserv_id]'";
+    reserv_id = '$_POST[reserv_id]' AND
+    c_table = '$_POST[c_table]'";
 
  if (!mysqli_query($con,$sql))
  {
