@@ -50,12 +50,13 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
             <thead>
                 <tr>
-                    <th>Dish name</th>
-                    <th>Dietary restriction</th>
-		            <th>Price</th>
+                    <th style="padding: 25px 0px 25px 0px;">Dish name</th>
+                    <th style="padding: 25px 0px 25px 0px;">Dietary restriction</th>
+		            <th style="padding: 25px 0px 25px 0px;">Price</th>
                 </tr>
             </thead>';
 
@@ -63,16 +64,17 @@
         echo '
         <tbody>
             <tr>
-                <td>'.$row['fname'].'</td>
-                <td>'.$row['diet_res'].'</td>
-                <td>'.$row['price'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['fname'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['diet_res'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['price'].'</td>
             </tr>
         </tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
 
     mysqli_close($con);
 ?>

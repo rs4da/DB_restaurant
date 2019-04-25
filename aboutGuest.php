@@ -49,26 +49,28 @@
     $result = mysqli_query($con,$sql);
 
     echo '
+    <div style="line-height:0;">
         <table class="table table-hover" style="margin: auto; width: 80%;">
-        <thead>
-            <tr>
-                <th>Restaurant ID</th>
-                <th>Restaurant Address</th>
-            </tr>
-        </thead>';
+            <thead>
+                <tr>
+                    <th style="padding: 25px 0px 25px 0px;">Restaurant ID</th>
+                    <th style="padding: 25px 0px 25px 0px;">Restaurant Address</th>
+                </tr>
+            </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
         <tbody>
             <tr>
-                <td>'.$row['rest_id'].'</td>
-                <td>'.$row['address'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['rest_id'].'</td>
+                <td style="padding: 25px 0px 25px 0px;">'.$row['address'].'</td>
             </tr>
         <tbody>';
         echo "<br>";
     }
 
     echo '
-        </table>';
+        </table>
+        </div>';
     
     mysqli_close($con);
 ?>
