@@ -15,7 +15,7 @@
    $output = fopen('/tmp/report.csv', 'w');
    fputcsv($output, array('Dish name', 'Dietary rest', 'Price'));
    while ($row = mysqli_fetch_array($results)){
-     fputcsv($output, $row);
+     fputcsv($output, array($row['fname'], $row['diet_res'], $row['price']));
    }
 
    readfile("/tmp/report.csv");
