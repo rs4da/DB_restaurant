@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gilda+Display|Raleway+Dots|Love+Ya+Like+A+Sister|Reenie+Beanie|Fredericka+the+Great|Shadows+Into+Light+Two|Major+Mono+Display|Bilbo|Architects+Daughter|Sacramento|Marck+Script|Thasadith|Open+Sans+Condensed:300" rel="stylesheet">
     <title>Database Project</title>
     <script type="text/javascript">
-
     </script>
   </head>
 
@@ -124,6 +123,7 @@
     echo '</table>';
     
     mysqli_close($con);
+
 ?>
 
  <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Where current Tavola employees work: </b></p>

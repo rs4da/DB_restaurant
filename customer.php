@@ -105,7 +105,6 @@
 
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
-
 </div>
 </div>
 
@@ -155,6 +154,7 @@
         </table>';
     
     mysqli_close($con);
+
 ?>
 
 <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Where current Tavola customers are eating: </b></p>
@@ -198,6 +198,7 @@
 ?>
 
 <div>
+
  <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Who current Tavola customers are being served by: </b></p>
 </div>
 
