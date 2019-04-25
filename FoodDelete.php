@@ -10,7 +10,8 @@
     }
 
     // Form the SQL query (a DELETE query)
-    $sql="DELETE FROM Food WHERE fname = '$_POST[fname]'";
+    $sql="DELETE FROM Food WHERE 
+    fname = '$_POST[fname]' ";
 
     if (!mysqli_query($con,$sql))
     {

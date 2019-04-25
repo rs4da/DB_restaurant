@@ -10,10 +10,24 @@
     }
     
     // Form the SQL query (a DELETE query)
-    $sql="DELETE FROM Reservation WHERE 
-        reserv_id = '$_POST[reserv_id]'";
+    $sql="DELETE FROM Reservation WHERE  
+        reserv_id = '$_POST[reserv_id]' AND 
+        cname = '$_POST[cname]' AND
+        party_size = '$_POST[party_size]' AND
+        rdate = '$_POST[rdate]' AND
+        rtime = '$_POST[rtime]'";
+
+    $sql2="DELETE FROM Make WHERE 
+        reserv_id = '$_POST[reserv_id]' AND
+        c_table = '$_POST[c_table]'";
 
     if (!mysqli_query($con,$sql))
+    {
+    echo $USERNAME;
+    die('Error: ' . mysqli_error($con));
+    }
+
+    if (!mysqli_query($con,$sql2))
     {
     echo $USERNAME;
     die('Error: ' . mysqli_error($con));

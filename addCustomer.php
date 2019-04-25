@@ -8,9 +8,18 @@
 mysqli_connect_error();
  }
  // Form the SQL query (an INSERT query)
+// if (isset($_POST['phone_num'], $_POST['c_table'], $_POST['cname'], $_POST['bill_id'])){
  $sql="INSERT INTO Customer (phone_num, c_table, cname, bill_id)
  VALUES
  ('$_POST[phone_num]','$_POST[c_table]','$_POST[cname]','$_POST[bill_id]')";
+ 
+ $sql2="INSERT INTO Eat_at (phone_num, rest_id)
+ VALUES
+ ('$_POST[phone_num]','$_POST[rest_id]')";
+
+ $sql3="INSERT INTO Serve (serve_id, emp_id, phone_num)
+ VALUES
+ ('$_POST[serve_id]','$_POST[emp_id]','$_POST[phone_num]')";
 
  $sql2="INSERT INTO Eat_at (phone_num, rest_id)
  VALUES

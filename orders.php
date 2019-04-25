@@ -1,41 +1,85 @@
-<style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
 
-    td,
-    th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel ="stylesheet" href ="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Gilda+Display|Raleway+Dots|Love+Ya+Like+A+Sister|Reenie+Beanie|Fredericka+the+Great|Shadows+Into+Light+Two|Major+Mono+Display|Bilbo|Architects+Daughter|Sacramento|Marck+Script|Thasadith|Open+Sans+Condensed:300" rel="stylesheet">
+    <title>Database Project</title>
+    <script type="text/javascript">
 
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-</style>
+    </script>
+  </head>
 
+    <!-- Title -->
+  <body style="background-color: #faf4ff;">
+    <header>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:transparent !important">
+        <a class="navbar-brand" href="index.html" style="text-shadow: 0 0 10px #9d81d1 , 0 0 10px #1d0f51 , 0 0 10px #1d0f51 , 0 0 10px #9d81d1;">Tavola Italian Kitchen</a>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-brand" style="font-color:#ffffff; font-size: 30px;">Orders</a>
+                </li>
+            </ul>
+        </div>  
+    </nav>
+    </header>
 <div>
-<center>
- <h1>Orders</h1>
-</center>
- <form action="addOrder.php" method="post">
- <p><b>Open a new order: </b></p>
- <p>Enter order id: <input type="text" name="order_id" /></p>
- <p>Enter food name: <input type="text" name="food" /></p>
- <p>Enter customer phone number: <input type="text" name="phone_num" /></p>
- <p><input type="submit" /></p>
- </form>
 
- <form action="deleteOrder.php" method="post">
- <p><b>Close an order:</b></p>
- <p>Enter order id: <input type="text" name="order_id" /></p>
- <p><input type="submit" /></p>
- </form>
+<div class="col-sm-6 offset-sm-3 text-center">
+<div class="form-group">
+    <form action="addOrder.php" method="POST" enctype="multipart/form-data">
+    <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new order:</b></p>
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-text-input" class="col-5 col-form-label">Enter order id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" name="order_id">
+            </div>
+        </div>
 
- <p><b>Current orders: </b></p>
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-search-input" class="col-5 col-form-label">Enter food:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" name="food">
+            </div>
+        </div>
+
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-email-input" class="col-5 col-form-label">Enter phone number:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" name="phone_num">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
+    </form>
+
+    <form action="deleteOrder.php" method="post">
+        <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete an order:</b></p>
+
+        <div class="form-group row" style="margin: 1px; padding: 3px">
+            <label for="example-tel-input" class="col-5 col-form-label">Enter order id:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" name="order_id">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
+    </form>
+
+</div>
+</div>
+
+
+<div class="d-flex flex-column p-1 justify-content-center text-center">
+
+<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current orders:</p></b>
+
 
 <?php
     require_once('./library.php');
@@ -51,19 +95,23 @@
     $result = mysqli_query($con,$sql);
 
     echo '
-        <table>
-            <tr>
-                <th>Order ID</th>
-                <th>Food Name</th>
-		<th>Customer Phone Number</th>
-            </tr>';
+        <table class="table table-hover" style="margin: auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Food Name</th>
+                    <th>Table Number</th>
+                </tr>
+            </thead>';
     while($row = mysqli_fetch_array($result)) {
         echo '
+        <tbody>
             <tr>
                 <td>'.$row['order_id'].'</td>
                 <td>'.$row['food'].'</td>
                 <td>'.$row['phone_num'].'</td>
-            </tr>';
+            </tr>
+        </tbody>';
         echo "<br>";
     }
 
@@ -72,4 +120,3 @@
     
     mysqli_close($con);
 ?>
-</div>

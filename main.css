@@ -21,6 +21,13 @@ header{
   padding-left:1%;
 }
 
+.navbar-sub{
+  /*font-family: 'Sacramento', cursive;*/
+  font-family: 'Garamond';
+  letter-spacing: 5px;
+  font-size: 40px;
+}
+
 .row{
   padding-top:5%;
   padding-bottom:2%;
@@ -64,3 +71,13 @@ header{
   color:#FFF;
 }
 
+.btn-outline-primary-custom {
+  border-color:#9c63f2;
+  color:#9c63f2;
+}
+
+.btn-outline-primary-custom:hover {
+  border-color:#9c63f2;
+  background-color:#9c63f2;
+  color: #ffffff;
+}

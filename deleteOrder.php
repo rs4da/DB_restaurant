@@ -10,7 +10,8 @@
     }
     
     // Form the SQL query (a DELETE query)
-    $sql="DELETE FROM Orders WHERE order_id = '$_POST[order_id]'";
+    $sql="DELETE FROM Orders WHERE 
+    order_id = '$_POST[order_id]'";
 
     if (!mysqli_query($con,$sql))
     {
