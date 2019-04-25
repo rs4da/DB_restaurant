@@ -30,76 +30,76 @@
     </nav>
     </header>
 
-    <div class="col-sm-8 offset-sm-2 text-center">
+<div class="col-sm-8 offset-sm-2 text-center">
 <div class="form-group">
-    <form action="addReservation.php">
+    <form action="addCustomer.php" method="POST" enctype="multipart/form-data">
     <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new customer:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter restaurant id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="rest_id">
+                <input class="form-control" type="text" name="rest_id">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter customer's phone number:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="phone_num">
+                <input class="form-control" type="text" name="phone_num">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-search-input" class="col-5 col-form-label">Enter table number:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="c_table">
+                <input class="form-control" type="text" name="c_table">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-email-input" class="col-5 col-form-label">Enter customer name:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="cname">
+                <input class="form-control" type="text" name="cname">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-url-input" class="col-5 col-form-label">Enter bill id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="bill_id">
+                <input class="form-control" type="text" name="bill_id">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-url-input" class="col-5 col-form-label">Enter serve id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="serve_id">
+                <input class="form-control" type="text" name="serve_id">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-url-input" class="col-5 col-form-label">Enter employee id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="emp_id">
+                <input class="form-control" type="text" name="emp_id">
             </div>
         </div>
 
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
 
-    <form action="deleteReservation.php" method="post">
+    <form action="deleteCustomer.php" method="post">
         <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete customer info:</b></p>
 
         <div class="form-group row" style="margin: 1px; padding: 3px">
             <label for="example-tel-input" class="col-5 col-form-label">Enter customer's phone number:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="phone_num">
+                <input class="form-control" type="text" name="phone_num">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px">
             <label for="example-tel-input" class="col-5 col-form-label">Enter serve id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="serve_id">
+                <input class="form-control" type="text" name="serve_id">
             </div>
         </div>
 

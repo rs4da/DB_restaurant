@@ -32,40 +32,47 @@
 
 <div class="col-sm-6 offset-sm-3 text-center">
 <div class="form-group">
-    <form action="addReservation.php">
+    <form action="addReservation.php" method="POST" enctype="multipart/form-data">
     <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a reservation:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter reservation id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="reserv_id">
+                <input class="form-control" type="text" name="reserv_id">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-search-input" class="col-5 col-form-label">Enter reservation name:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="cname">
+                <input class="form-control" type="text" name="cname">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-email-input" class="col-5 col-form-label">Enter reservation party size:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="party_size">
+                <input class="form-control" type="text" name="party_size">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-url-input" class="col-5 col-form-label">Enter reservation date:</label>
             <div class="col-7">
-                <input class="form-control" type="date" id="rdate">
+                <input class="form-control" type="date" name="rdate">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-tel-input" class="col-5 col-form-label">Enter reservation time:</label>
             <div class="col-7">
-                <input class="form-control" type="time" id="rtime">
+                <input class="form-control" type="time" name="rtime">
+            </div>
+        </div>
+
+        <div class="form-group row" style="margin: 1px; padding: 3px;">
+            <label for="example-search-input" class="col-5 col-form-label">Enter table number:</label>
+            <div class="col-7">
+                <input class="form-control" type="text" name="c_table">
             </div>
         </div>
 
@@ -78,7 +85,7 @@
         <div class="form-group row" style="margin: 1px; padding: 3px">
             <label for="example-tel-input" class="col-5 col-form-label">Enter reservation id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="reserv_id">
+                <input class="form-control" type="text" name="reserv_id">
             </div>
         </div>
 
@@ -137,4 +144,43 @@
     mysqli_close($con);
 ?>
 
+<b style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><p>Current reservations:</p></b>
+
+<?php
+    require_once('./library.php');
+    $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
+
+    if (mysqli_connect_errno()) {
+        echo("Can't connect to MySQL Server. Error code: " .
+        mysqli_connect_error());
+        return null;
+    }
+
+    $sql="CALL SelectTable('Make');";
+    $result = mysqli_query($con,$sql);
+
+    echo '
+        <table class="table table-hover" style="margin: auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th>Reservation ID</th>
+                    <th>Table Number</th>
+                </tr>
+            </thead>';
+    while($row = mysqli_fetch_array($result)) {
+        echo '
+            <tbody>
+                <tr>
+                    <td>'.$row['reserv_id'].'</td>
+                    <td>'.$row['c_table'].'</td>
+                </tr>
+            </tbody>';
+        echo "<br>";
+    }
+
+    echo '
+        </table>';
+    
+    mysqli_close($con);
+?>
 

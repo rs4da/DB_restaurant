@@ -32,39 +32,39 @@
 
     <div class="col-sm-6 offset-sm-3 text-center">
 <div class="form-group">
-    <form action="addReservation.php">
+    <form action="FoodInsert.php" method="POST" enctype="multipart/form-data">
     <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new dish:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter dish name:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="fname">
+                <input class="form-control" type="text" name="fname">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-search-input" class="col-5 col-form-label">Enter dietary restriction:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="diet_res">
+                <input class="form-control" type="text" name="diet_res">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-email-input" class="col-5 col-form-label">Enter reservation party size:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="price">
+                <input class="form-control" type="text" name="price">
             </div>
         </div>
 
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
 
-    <form action="deleteReservation.php" method="post">
+    <form action="FoodDelete.php" method="post">
         <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete a dish:</b></p>
 
         <div class="form-group row" style="margin: 1px; padding: 3px">
             <label for="example-tel-input" class="col-5 col-form-label">Enter dish name:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="fname">
+                <input class="form-control" type="text" name="fname">
             </div>
         </div>
 

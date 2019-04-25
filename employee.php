@@ -32,46 +32,46 @@
 
 <div class="col-sm-6 offset-sm-3 text-center">
 <div class="form-group">
-    <form action="addReservation.php">
+    <form action="addEmployee.php" method="POST" enctype="multipart/form-data">
     <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a new employee:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter restaurant id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="rest_id">
+                <input class="form-control" type="text" name="rest_id">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter employee id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="emp_id">
+                <input class="form-control" type="text" name="emp_id">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-search-input" class="col-5 col-form-label">Enter employee name:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="ename">
+                <input class="form-control" type="text" name="ename">
             </div>
         </div>
 
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-email-input" class="col-5 col-form-label">Enter employee wage:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="wage">
+                <input class="form-control" type="text" name="wage">
             </div>
         </div>
 
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
 
-    <form action="deleteReservation.php" method="post">
+    <form action="deleteEmployee.php" method="post">
         <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete an employee info:</b></p>
 
         <div class="form-group row" style="margin: 1px; padding: 3px">
             <label for="example-tel-input" class="col-5 col-form-label">Enter employee id:</label>
             <div class="col-7">
-                <input class="form-control" type="text" id="emp_id">
+                <input class="form-control" type="text" name="emp_id">
             </div>
         </div>
 
