@@ -18,7 +18,7 @@
   <body style="background-color: #faf4ff;">
     <header>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:transparent !important">
-        <a class="navbar-brand" href="admin.php" style="text-shadow: 0 0 10px #9d81d1 , 0 0 10px #1d0f51 , 0 0 10px #1d0f51 , 0 0 10px #9d81d1;">Tavola Italian Kitchen</a>
+        <a class="navbar-brand" href="employeePage.php" style="text-shadow: 0 0 10px #9d81d1 , 0 0 10px #1d0f51 , 0 0 10px #1d0f51 , 0 0 10px #9d81d1;">Tavola Italian Kitchen</a>
         
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
@@ -32,7 +32,7 @@
 
 <div class="col-sm-6 offset-sm-3 text-center">
 <div class="form-group">
-    <form action="addReservation.php" method="POST" enctype="multipart/form-data">
+    <form action="addReservationEmployee.php" method="POST" enctype="multipart/form-data">
     <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Add a reservation:</b></p>
         <div class="form-group row" style="margin: 1px; padding: 3px;">
             <label for="example-text-input" class="col-5 col-form-label">Enter reservation id:</label>
@@ -79,7 +79,7 @@
         <button type="submit" class="btn btn-primary" style="margin-top: 10px; background-color: #9c63f2; border-color: #9c63f2;">Submit</button>
     </form>
 
-    <form action="deleteReservation.php" method="post">
+    <form action="deleteReservationEmployee.php" method="post">
         <p style="font-size: 35px; margin-top: 25px; font-family: 'Garamond';"><b>Delete a reservation:</b></p>
 
         <div class="form-group row" style="margin: 1px; padding: 3px">

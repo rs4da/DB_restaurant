@@ -24,7 +24,7 @@
   <body style="background-color: #faf4ff;">
     <header>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:transparent !important">
-        <a class="navbar-brand" href="admin.php" style="text-shadow: 0 0 10px #9d81d1 , 0 0 10px #1d0f51 , 0 0 10px #1d0f51 , 0 0 10px #9d81d1;">Tavola Italian Kitchen</a>
+        <a class="navbar-brand" href="employeePage.php" style="text-shadow: 0 0 10px #9d81d1 , 0 0 10px #1d0f51 , 0 0 10px #1d0f51 , 0 0 10px #9d81d1;">Tavola Italian Kitchen</a>
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <a id="link" href="about.php">
+                <a id="link" href="aboutEmployee.php">
                     <div class="categoryproducts">
                         <h3>About Restaurant</h3>
                         <p>Data about this restaurant</p>
@@ -47,7 +47,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a id="link" href="reservations.php">
+                <a id="link" href="reservationsEmployee.php">
                     <div class="categoryproducts">
                         <h3>Reservations</h3>
                         <p>Data about reservations made</p>
@@ -55,7 +55,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a id="link" href="orders.php">
+                <a id="link" href="ordersEmployee.php">
                     <div class="categoryproducts">
                         <h3>Menu Orders</h3>
                         <p>Data about current orders</p>
@@ -63,7 +63,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a id="link" href="food.php">
+                <a id="link" href="foodEmployee.php">
                     <div class="categoryproducts">
                         <h3>Dishes</h3>
                         <p>Data about the dishes we serve</p>
@@ -71,18 +71,10 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a id="link" href="customer.php">
+                <a id="link" href="customerEmployee.php">
                     <div class="categoryproducts">
                         <h3>Customers</h3>
                         <p>Data about customers</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a id="link" href="employee.php">
-                    <div class="categoryproducts">
-                        <h3>Employees</h3>
-                        <p>Data about employees</p>
                     </div>
                 </a>
             </div>
